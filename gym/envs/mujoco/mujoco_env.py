@@ -75,7 +75,7 @@ class MujocoEnv(gym.Env):
         return self.action_space
 
     def _set_observation_space(self, observation):
-        self.observation_space = convert_observation_to_space(observation)
+        self.observation_space = convert_observation_to_space(observation.astype(np.float32))
         return self.observation_space
 
     def seed(self, seed=None):
